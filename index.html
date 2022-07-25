@@ -367,7 +367,7 @@ const console = document.getElementById("tests");
 prettify.toHTML(run(), console);
 //# sourceURL=pen.js
 
-var srcs, pics;
+var srcs;
 
 
 srcs = ['https://www.gettyimages.co.uk/gi-resources/images/500px/983841598.jpg', 'https://www.gettyimages.co.uk/gi-resources/images/500px/983794168.jpg', 'https://www.gettyimages.co.uk/gi-resources/images/500px/983703508.jpg'];
@@ -381,11 +381,13 @@ document.getElementById('next').addEventListener('click', (event) => {
 });
 
 document.getElementById('previous').addEventListener('click', (event) => {
-  srcs.unshift(srcs[0]);
+  srcs.unshift(srcs.pop());
   let element_pic2 = document.getElementById('pic');
-  element_pic2.setAttribute("src", pics[0]);
+  element_pic2.setAttribute("src", srcs.slice(-1)[0]);
 
 });
+
+
 
 
 function getNumberOrString(value) {
