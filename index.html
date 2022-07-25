@@ -100,6 +100,10 @@ nav{
     margin-left: 20px;
 }
 
+h3 {
+color: #000;
+}
+
 
 
 /* don't edit this */
@@ -195,9 +199,47 @@ Developer Quotes
     
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xN6uHrSPOg8" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                     
    <img src='https://images.unsplash.com/photo-1647057225732-81fc6cd427a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0OTU4NjIyNA&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-                                             
+       
+   <img id="pic" 
+src="https://www.gettyimages.co.uk/gi-resources/images/500px/983841598.jpg"
+ height="100"" width="100"/>
+<br>
+<br>
+
+<button id="previous">Previous</button>
+<button id="next"> Next</button>
+
+<br>
+<br>
+
+<h3>Leave a Comment Please</h3>
+
+<form action="#" id=“leave a comment”>
+  
+  <div class="form-group">
+    <label for="name" id="name-label">Name</label>
+    <input type="text" id="name" class="form-control" placeholder="Enter your name" required/>
+  </div>
+
+  <div class="form-group">
+    <label for="email" id="email-label">Email</label>
+    <input type="email" id="email" class="form-control" placeholder="Enter your email" required/>
+  </div>
+
+
+<textarea name= "comment" form="usrform">Enter text here...</textarea>
+
+
+<input type="submit">
+
+
+
+
    
   </main>
+
+
+  
 
 <footer class="c-site-footer"></footer>
  </body>            
@@ -316,6 +358,31 @@ test("There are at least 500 words on the page", () => {
 const console = document.getElementById("tests");
 prettify.toHTML(run(), console);
 //# sourceURL=pen.js
+
+var srcs, pics;
+
+
+srcs = ['https://www.gettyimages.co.uk/gi-resources/images/500px/983841598.jpg', 'https://www.gettyimages.co.uk/gi-resources/images/500px/983794168.jpg', 'https://www.gettyimages.co.uk/gi-resources/images/500px/983703508.jpg'];
+
+
+document.getElementById('next').addEventListener('click', (event) => {
+  srcs.push(srcs.shift());
+  let element_pic = document.getElementById('pic');
+  element_pic.setAttribute("src", srcs[0]);
+
+});
+
+document.getElementById('previous').addEventListener('click', (event) => {
+  srcs.unshift(srcs[0]);
+  let element_pic2 = document.getElementById('pic');
+  element_pic2.setAttribute("src", pics[0]);
+
+});
+
+
+
+
+
     </script>
 
   
