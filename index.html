@@ -214,23 +214,31 @@ src="https://www.gettyimages.co.uk/gi-resources/images/500px/983841598.jpg"
 
 <h3>Leave a Comment Please</h3>
 
-<form action="#" id=“leave a comment”>
+      
+<label for="name" id="name-label">Name</label>
+ <input type="text" id="name" class="form- 
+ control" placeholder="Enter your name" 
+ required/>
   
-  <div class="form-group">
-    <label for="name" id="name-label">Name</label>
-    <input type="text" id="name" class="form-control" placeholder="Enter your name" required/>
-  </div>
+<br>
+<br>
 
-  <div class="form-group">
-    <label for="email" id="email-label">Email</label>
-    <input type="email" id="email" class="form-control" placeholder="Enter your email" required/>
-  </div>
+<label for="email" id="email-label">Email</label>
+<input type="email" id="email" class="form- 
+control" placeholder="Enter your email" required/>
+ 
+<br>
+<br>
+
+<textarea id="Comment" name="Leave a Comment"
+      rows="5" cols="33">
+Enter your text here...</textarea>
 
 
-<textarea name= "comment" form="usrform">Enter text here...</textarea>
+<button id="button">submit</button>
 
 
-<input type="submit">
+  
 
 
 
@@ -376,6 +384,24 @@ document.getElementById('previous').addEventListener('click', (event) => {
   srcs.unshift(srcs[0]);
   let element_pic2 = document.getElementById('pic');
   element_pic2.setAttribute("src", pics[0]);
+
+});
+
+
+function getNumberOrString(value) {
+  // Convert a string value to a number if possible
+  let number_value = Number(value);
+  if (Number.isNaN(number_value)) {
+    return value
+  } else {
+    return number_value
+  }
+}
+
+
+
+document.getElementById('button').addEventListener('click', (event) => {
+  event.target.innerText = getNumberOrString(document.getElementById('button').value);
 
 });
 
